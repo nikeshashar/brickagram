@@ -30,6 +30,14 @@ describe 'posts' do
         expect(current_path).to eq '/posts'
       end
 
+    it 'can attach an image to a post' do
+      visit '/posts'
+      click_link 'New Post'
+      fill_in 'Title', with: 'Lego rules'
+      attach_file 'Picture', Rails.root.join('spec/images/lego.jpg')
+      click_button 'Create Post'
+      expect(page).to have_css 'img.uploaded-pic'
+    end
 
    end
 end
