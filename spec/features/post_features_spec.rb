@@ -29,6 +29,8 @@ describe 'posts' do
         expect(page).to have_content 'Lego rules'
         expect(current_path).to eq '/posts'
       end
+
+
    end
 end
 
