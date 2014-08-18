@@ -13,10 +13,22 @@ describe 'posts' do
       Post.create(title: 'Hello World')
     end
 
-    it 'displays the posts title' do
+    it 'displays all posts' do
       visit '/posts'
       expect(page).to have_content 'Hello World'
     end
+   end
+
+   describe 'creating posts ' do
+      it 'adds the post to a form' do
+        visit '/posts'
+        click_link 'New Post'
+        fill_in 'Title', with: 'Lego rules'
+        click_button 'Create Post'
+
+        expect(page).to have_content 'Lego rules'
+        expect(current_path).to eq '/posts'
+      end
    end
 end
 
