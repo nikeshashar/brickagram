@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
   def tags_list=(some_tags)
     return if some_tags.empty?
       some_tags.split(', ').uniq.each do |tag|
-      self.tags << Tag.find_or_create_by(text: some_tags)
+      self.tags << Tag.find_or_create_by(text: tag)
     end
   end
 

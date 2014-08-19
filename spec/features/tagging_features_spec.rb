@@ -14,3 +14,18 @@ describe 'tagging posts' do
   end
 end
 
+describe 'filtering by tags' do
+    before do 
+        Post.create(title: 'PostA', tags_list: '#batman')
+        Post.create(title: 'PostB', tags_list: '#emmet')
+    end
+
+    it 'filters to show only tagged posts' do 
+        visit '/posts'
+        click_link '#batman'
+        expect(page).to have_css 'h1', text: 'Posts tagged with'
+        expect(page).to have_content 'PostA'    
+        expect(page).not_to have_content 'PostB'    
+    end
+
+end

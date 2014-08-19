@@ -1,5 +1,7 @@
-<% if @posts.any? %>
-  <% @posts.each do |post| %>
+<h1>Posts tagged with <%= @tag.text %></h1>
+
+<% if @tag.posts.any? %>
+  <% @tag.posts.each do |post| %>
     <h3><%= post.title %></h3>
     <% if post.picture.present? %>
     <%= image_tag post.picture.url(:medium), class: 'uploaded-pic' %>
@@ -10,8 +12,4 @@
       <%= link_to tag.text, tag %>
     <% end %>
   <% end %>
-<% else %>
-  There are no posts
 <% end %>
-
-<%= link_to 'New Post', new_post_path %>
