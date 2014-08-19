@@ -13,3 +13,4 @@ describe 'tagging posts' do
     expect(page).to have_link '#chloe'
   end
 end
+

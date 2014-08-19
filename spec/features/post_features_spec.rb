@@ -39,6 +39,14 @@ describe 'posts' do
       expect(page).to have_css 'img.uploaded-pic'
     end
 
+      it 'displays no image if no picture attached' do
+      visit '/posts'
+      click_link 'New Post'
+      fill_in 'Title', with: 'Lego rules'
+      click_button 'Create Post'
+      expect(page).not_to have_css 'img.uploaded-pic'
+    end
+
    end
 end
 
