@@ -8,5 +8,19 @@ class Post < ActiveRecord::Base
     :secret_access_key => Rails.application.secrets.s3_secret_access_key
   }
 
+  has_and_belongs_to_many :tags
+
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+
+  def tags_list
+  end
+
+  #this fixes the unknown attribute error from RSpec
+  def tags_list=(some_tags)
+    return if some_tags.empty?
+      some_tags.split(', ').uniq.each do |tag|
+      self.tags << Tag.find_or_create_by(text: some_tags)
+    end
+  end
+
 end
