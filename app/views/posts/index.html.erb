@@ -1,7 +1,9 @@
-<% if @posts.any? %>  
-    <%= render @posts %>
-<% else %>
-  There are no posts
-<% end %>
+<main class='container'>
+  <% if @posts.any? %>
+      <%= render @posts %>
+  <% else %>
+    There are no posts
+  <% end %>
 
-<%= link_to 'New Post', new_post_path %>
+  <%= link_to 'New Post', new_post_path %>
+</main>
