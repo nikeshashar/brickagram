@@ -1,15 +1,17 @@
 class PostsController < ApplicationController
-   def index
-    @posts = Post.all
-   end
+  before_action :authenticate_user!, except: [:index]
 
-   def new
-    @post = Post.new
-   end
+  def index
+   @posts = Post.all
+  end
 
-   def create
-    @formdata = Post.new(params[:post].permit(:title, :picture, :tags_list))
-    @formdata.save
-    redirect_to '/posts'
-   end
+  def new
+   @post = Post.new
+  end
+
+  def create
+   @formdata = Post.new(params[:post].permit(:title, :picture, :tags_list))
+   @formdata.save
+   redirect_to '/posts'
+  end
 end

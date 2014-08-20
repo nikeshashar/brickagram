@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe 'tagging posts' do
+  before do
+    chloe = User.create(email: 'wiggle@lego.com', password: '12345678', password_confirmation: '12345678')
+    login_as chloe
+  end
+
   it 'it displays the tags underneath a post' do
     visit '/posts'
     click_link 'New Post'
@@ -15,20 +20,20 @@ describe 'tagging posts' do
 end
 
 describe 'filtering by tags' do
-    before do 
+    before do
         Post.create(title: 'PostA', tags_list: '#batman')
         Post.create(title: 'PostB', tags_list: '#emmet')
     end
 
-    it 'filters to show only tagged posts' do 
+    it 'filters to show only tagged posts' do
         visit '/posts'
         click_link '#batman'
         expect(page).to have_css 'h1', text: 'Posts tagged with'
-        expect(page).to have_content 'PostA'    
-        expect(page).not_to have_content 'PostB'    
+        expect(page).to have_content 'PostA'
+        expect(page).not_to have_content 'PostB'
     end
 
-    it 'is accessible via pretty urls' do 
+    it 'is accessible via pretty urls' do
         visit '/tags/batman'
         expect(page).to have_content 'PostA'
     end

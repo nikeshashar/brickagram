@@ -37,12 +37,14 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'
   gem 'capybara'
+  gem 'warden'
 end
 
 gem 'rails_12factor', group: :production
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'devise'
 
 
 
