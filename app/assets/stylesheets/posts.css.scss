@@ -5,3 +5,26 @@
 .uploaded-pic {
 
 }
+
+.post  {
+    img {
+    max-width: 100%;
+    }
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .tags a {
+      background: #67A3D7;
+      color: white;
+      font-size: 19px;
+      padding: 5px 14px;
+      display: inline-block;
+      border-radius: 16px;
+      margin-top: 10px;
+      margin-right: 5px;
+    }
+}
+
+
