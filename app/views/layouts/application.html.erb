@@ -14,6 +14,7 @@
   </head>
 
   <body>
+      
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -24,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brickagram</a>
+          <a class="navbar-brand" href="/post">Brickagram</a>
         </div>
         <div class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
@@ -34,8 +35,8 @@
             <div class="form-group">
               <input type="password" placeholder="Password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-             <button type="submit" class="btn btn-success">Sign up</button>
+            <button type="submit" class="btn btn-success"><%= link_to 'Sign in', new_user_session_path %></button>
+             <button type="submit" class="btn btn-success"><%= link_to 'Sign up', new_user_registration_path %></button>
 
           </form>
         </div><!--/.navbar-collapse -->

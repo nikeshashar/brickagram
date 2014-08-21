@@ -1,12 +1,11 @@
 require 'spec_helper'
-describe 'creating posts ' do
-  context 'logged out' do
-    it 'should take us to the sign up page' do
-        visit '/posts'
-        click_link 'New Post'
-        expect(page).to have_content 'You need to sign in or sign up before continuing'
-    end
-
+  describe 'creating posts ' do
+    context 'logged out' do
+      it 'should take us to the sign up page' do
+          visit '/posts'
+          click_link 'New Post'
+          expect(page).to have_content 'You need to sign in or sign up before continuing'
+      end
   end
 
   context 'logged in' do
@@ -14,7 +13,6 @@ describe 'creating posts ' do
       chloe = User.create(email: 'wiggle@lego.com', password: '12345678', password_confirmation: '12345678')
       login_as chloe
     end
-
 
       it 'adds the post to a form' do
         visit '/posts'
