@@ -26,7 +26,7 @@
               <%= link_to('#', class:"btn btn-md btn-success", role:"button", data: {toggle: "modal", target: "#myModal" }) do %>
                   New Post
               <% end %>
-                <button type="submit" class="btn btn-md btn-danger"><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></button>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "btn btn-md btn-danger" %>
              <% else %>
                 <%= link_to('#', class:"btn btn-md btn-success", role:"button", data: {toggle: "modal", target: "#signUpModal" }) do %>
                     Sign Up
