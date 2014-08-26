@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rspec-collection_matchers'
   gem 'capybara'
   gem 'warden'
+  gem 'stripe-ruby-mock', '~> 1.10.1.7'
 end
 
 gem 'rails_12factor', group: :production
