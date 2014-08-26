@@ -5,6 +5,15 @@ GIT
     heroku_secrets (0.0.2)
 
 GIT
+  remote: git://github.com/stripe/stripe-ruby.git
+  revision: 2c6f4caa99916c33d3f9af57f66422ff5ea913cf
+  specs:
+    stripe (1.15.0)
+      json (~> 1.8.1)
+      mime-types (>= 1.25, < 3.0)
+      rest-client (~> 1.4)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: e8c1dc8a26183cf10e5eac7fb29eb7bdcf51d01f
   specs:
@@ -174,10 +183,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    stripe (1.15.0)
-      json (~> 1.8.1)
-      mime-types (>= 1.25, < 3.0)
-      rest-client (~> 1.4)
     stripe-ruby-mock (1.10.1.7)
       dante (>= 0.2.0)
       jimson-temp
@@ -222,6 +227,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
+  stripe!
   stripe-ruby-mock (~> 1.10.1.7)
   turbolinks
   uglifier (>= 1.3.0)
