@@ -3,7 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3><%= post.title %></h3>
-          <%= form_tag charges_path do %>
+          <%= form_tag post_charges_path(post.id) do %>
             <article>
               <label class="amount">
                 <span>Amount: $5.00</span>

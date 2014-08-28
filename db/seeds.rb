@@ -10,7 +10,10 @@ Post.destroy_all
 
 1.upto(10) do |n|
 	puts "Adding image #{n}"
-	tags = %w(#lego #csharpd #nikesh #master #builder #emmet #skittles #tastethelego).sample(2).join(', ')
+	tags = %w(#lego #csharpd #nikesh #master #builder #emmet #skittles #tastethelego #hanwax).sample(2).join(', ')
 	image = %w(lego.jpg LEGO_Logo.jpg lego_skittles.jpg).sample
 	Post.create(title: "Awesome Post #{n}", tags_list: tags, picture: File.new(Rails.root.join 'spec/images/' + image))
 end
+
+User.destroy_all
+User.create(email: 'admin@lego.com', password: '1234567890', password_confirmation: '1234567890', admin: true)

@@ -39,6 +39,8 @@ group :development, :test do
   gem 'capybara'
   gem 'warden'
   gem 'stripe-ruby-mock', '~> 1.10.1.7'
+  gem "factory_girl_rails", "~> 4.0"
+  gem "launchy"
 end
 
 gem 'rails_12factor', group: :production
@@ -46,6 +48,7 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'hirb'
 
 
 
