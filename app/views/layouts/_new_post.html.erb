@@ -1,26 +1,24 @@
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModal">Brickagram time...</h4>
       </div>
+    
       <div class="modal-body">
-
         <%= form_for @new_post, html: { multipart: true } do |f| %>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
 
-        <%= f.label :tags_list, 'Tags' %>
-        <%= f.text_field :tags_list %>
+          <%= f.label :tags_list, 'Tags' %>
+          <%= f.text_field :tags_list %>
 
-        <%= f.label :picture %>
-        <%= f.file_field :picture %>
-
-      <% end %>
-        
+          <%= f.label :picture %>
+          <%= f.file_field :picture %>
+        <% end %> 
       </div>
+  
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="submit" form='new_post' class="btn btn-primary">Create Post</button>
