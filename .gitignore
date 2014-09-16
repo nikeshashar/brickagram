@@ -16,3 +16,4 @@
 /tmp
 /config/secrets.yml
 .env
+coverage/.last_run.json
