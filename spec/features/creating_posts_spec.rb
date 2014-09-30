@@ -2,17 +2,17 @@ require 'spec_helper'
  
   context 'logged in' do
     before do
-      chloe = User.create(email: 'wiggle@lego.com', password: '12345678', password_confirmation: '12345678')
+      chloe = create(:user)
       login_as chloe
     end
 
+    let(:chloe) { create(:user)}
 
       it 'adds the post to a form' do
         visit '/posts'
         click_link 'New Post'
         fill_in 'Title', with: 'Lego rules'
         click_button 'Create Post'
-
         expect(page).to have_content 'Lego rules'
         expect(current_path).to eq '/posts'
       end
