@@ -16,14 +16,6 @@ describe 'orders page' do
       expect(page).to have_link 'Lego'
     end 
 
-    it 'displays which user has ordered the product' do 
-      visit orders_path
-      expect(page).to have_content('wiggle@lego.com')
-    end 
-
-    it 'displays an order number' do 
-      expect(page).to have_content '123456789'
-    end 
   end
 
 

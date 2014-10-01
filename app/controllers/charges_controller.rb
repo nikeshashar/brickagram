@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
 	
 	def new
+		raise Rails.application.secrets.stripe_secret_key
 	  @post = Post.find params[:post_id]
 	end
 
@@ -22,7 +23,7 @@ class ChargesController < ApplicationController
 	  )
 
 	  Order.create(user: current_user, post: @post)
-	  flash[:notice] = 'Hey #{current_user.email} - thank you for your order'
+	  flash[:notice] = 'Thank you for your order'
 	  redirect_to '/posts'
 
 	rescue Stripe::CardError => e
