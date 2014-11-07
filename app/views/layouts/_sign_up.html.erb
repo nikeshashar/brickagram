@@ -1,32 +1,24 @@
-     <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="signUpModal">Please Sign Up</h4>
       </div>
       <div class="modal-body">
-
-      <%= form_for(User.new, as: :user, url:registration_path(:user)) do |f| %>
-        
-
-        <div><%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %></div>
+        <%= form_for(User.new, as: :user, url:registration_path(:user)) do |f| %>
+        <div><%= f.label :email %><br /><%= f.email_field :email, autofocus: true %></div>
 
         <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %></div>
+        <%= f.password_field :password, autocomplete: "off" %></div>
 
-        <div><%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-       
-     
+        <div><%= f.label :password_confirmation %><br /><%= f.password_field :password_confirmation, autocomplete: "off" %></div>
       </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default"><%= f.submit 'Sign up' %></button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-           <% end %>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"><%= f.submit 'Sign up' %></button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
-      </div>
+        <% end %>
     </div>
+  </div>
+</div>
