@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :setup_new_post
 
-  	def setup_new_post
-		  @new_post = Post.new
-  	end
+	def setup_new_post
+	  @new_post = Post.new
+	end
 
 end
