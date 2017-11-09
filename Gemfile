@@ -39,7 +39,7 @@ group :development, :test do
   gem 'capybara'
   gem 'warden'
   gem 'stripe-ruby-mock', '~> 1.10.1.7'
-  gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.9"
   gem "launchy"
 end
 
